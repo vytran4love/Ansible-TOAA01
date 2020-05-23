@@ -10,7 +10,7 @@ This is example flow chart:
 
 ```mermaid
 graph LR
-A[Master Branch] -- checkout --> B(feature/NguyenVanA)
-B -- create dir NguyenVanA--> C(local repo)
-C -- code & commit --> B
+  A[Master Branch] -- checkout --> B(feature/NguyenVanA)
+  B -- create dir NguyenVanA--> C(local repo)
+  C -- code & commit --> B
 ```
