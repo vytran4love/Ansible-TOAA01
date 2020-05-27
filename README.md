@@ -15,7 +15,6 @@ graph LR
   C -- code & commit --> B
 ```
 
-<<<<<<< HEAD
 ## How to contribute code
 Please kindly remember that **DO NOT** commit on master branch. We should following steps below:
 
