@@ -53,5 +53,3 @@ Following is overall folder structrue
 │   └── php.yml
 └── labs
 ```
-=======
->>>>>>> 36329dab06a4b650d849d74e4bbfcefff4dc811c
