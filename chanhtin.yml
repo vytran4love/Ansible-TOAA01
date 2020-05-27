@@ -1,1 +1,23 @@
-hello TOAA01
+## Cấu trúc của 1 playbook ##
+tinpc@ubuntu1:~/project/Ansible-TOAA01$ tree
+.
+├── 
+├── docs_example
+│   ├── ansible.cfg  --> file ansible config
+│   ├── group_vars   ---> nếu quá nhiều vars thì nên khai báo vào folder group_vars, tên file tương ứng file yml. Ưu tiên lấy giá trị trong group_vars
+│   │   ├── all.yml  --> áp dụng cho tất cả inventory
+│   │   ├── nginx.yml  --> tên file tuong ung file yml ngoài inventory
+│   │   └── php.yml
+│   ├── inventory
+│   │   ├── dynamic_inventory --> file dynamic inventory, dành qua cloud
+│   │   ├── local_inventory
+│   │   └── static_inventory --> file static inventory
+│   ├── main.yml
+│   ├── nginx.yml
+│   └── php.yml
+├── hosts.ini  --> khai báo hosts
+├── labs
+│   └── day2_inventory.md
+└── README.md
+
+4 directories, 14 files
