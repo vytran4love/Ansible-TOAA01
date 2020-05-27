@@ -1,0 +1,14 @@
+# Ref https://github.com/tylern91/gitignore/blob/master/Global/Ansible.gitignore
+# Ignore any MacOS system file that holds attributes/metadata about the folder
+# it resides in
+.DS_Store
+
+# Project specific settings of IDEs
+.idea
+.vscode
+
+# Ignore Ansible cfgmgmt
+*.retry
+
+# Ignore YAML Lint configuration file
+*.yamllint
