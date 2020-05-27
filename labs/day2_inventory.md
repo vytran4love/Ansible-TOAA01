@@ -23,3 +23,11 @@ This lab will help you more understand about Inventory.
   - Tags: 
       - Env: prod
       - Name: web / api
+
+## Ansible-inventory
+
+Command check inventory
+
+```
+ansible-inventory -i hosts --graph
+```
