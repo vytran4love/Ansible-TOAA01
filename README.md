@@ -20,16 +20,27 @@ Please kindly remember that **DO NOT** commit on master branch. We should follow
 
 1. Clone repo to local machine by using command
 
+```
     git clone https://github.com/vytran4love/Ansible-TOAA01
-
+```
 2. Checkout branch feature
+
+```
     git branch
     git checkout -b "feature/NguyenVanA"
+```
 3. Add and commit code on branch feature
+
+```
     git add -A
     git commit -m "Message you want to mark note"
+```
+
 4. Git push
+
+```
     git push
+```    
 5. Make a PR to master branch
 
 ## Overall Folder Structure
