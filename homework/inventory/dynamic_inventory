@@ -1,0 +1,12 @@
+---
+plugin: aws_ec2
+regions:
+  - ap-southeast-1
+filters:
+  tag: Environment: prod
+  instance-state-name: running
+groups:
+  be.web: "tags.Stack == 'be' and tags.Role == 'web'"
+  be.api: "tags.Stack == 'be' and tags.Role == 'api'"
+compose:
+  ansible_host: private_ip_address
