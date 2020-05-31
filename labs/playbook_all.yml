@@ -1,0 +1,6 @@
+---
+- hosts: wireguard gngix
+  gather_facts: yes
+  become: yes
+  tasks:
+  - ping:
