@@ -1,0 +1,6 @@
+---
+- hosts: "{{ hostname }}"
+  gather_facts: yes
+  become: yes
+  tasks:
+  - ping:
