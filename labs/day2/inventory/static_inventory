@@ -9,10 +9,10 @@
 web
 api
 
-[staging:children]
+[staging:children] <= check lai group name
 nightly
 
-[prod:children]
+[prod:children] <= check lai group name
 staging
 
 [nightly:vars]
