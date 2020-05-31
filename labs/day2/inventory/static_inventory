@@ -5,14 +5,14 @@
 [api]
 10.30.7.48
 
-[nightly]
+[nightly:children]
 web
 api
 
-[staging:children] <= check lai group name
+[staging:children] 
 nightly
 
-[prod:children] <= check lai group name
+[prod:children] 
 staging
 
 [nightly:vars]
