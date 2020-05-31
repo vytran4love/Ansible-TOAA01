@@ -1,5 +1,5 @@
 ---
 ansible_port: 22
 ansible_ssh_user: "ubuntu"
-ansible_ssh_private_key_file: "~/.ssh/nightly.key"
+ansible_ssh_private_key_file: "~/.ssh/prod.pem"
 ansible_python_interpreter: /usr/bin/python

@@ -5,29 +5,29 @@
 [api]
 10.30.7.48
 
-[nightly:children]
+[dev:children]
 web
 api
 
 [staging:children] 
-nightly
+dev
 
 [prod:children] 
 staging
 
-[nightly:vars]
+[dev:vars]
 ansible_port=22
 ansible_ssh_user=ubuntu
-ansible_ssh_private_key_file=~/.ssh/dev.key
+ansible_ssh_private_key_file=~/.ssh/dev.pem
 
 [staging:vars]
 ansible_port=22
 ansible_ssh_user=ubuntu
-ansible_ssh_private_key_file=~/.ssh/staging.key
+ansible_ssh_private_key_file=~/.ssh/staging.pem
 
 [prod:vars]
 ansible_port=22
 ansible_ssh_user=ubuntu
-ansible_ssh_private_key_file=~/.ssh/prod.key
+ansible_ssh_private_key_file=~/.ssh/prod.pem
 
 
