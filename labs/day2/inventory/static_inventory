@@ -1,0 +1,17 @@
+
+[master]
+10.30.7.46
+
+[slave]
+10.30.7.46
+
+[databases]
+master
+slave
+
+[databases:vars]
+ansible_port=22
+ansible_ssh_user=root
+ansible_ssh_private_key_file=../private_key_ansible
+
+

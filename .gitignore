@@ -12,3 +12,8 @@
 
 # Ignore YAML Lint configuration file
 *.yamllint
+
+# key
+trong_online_new
+private_key_ansible
+
