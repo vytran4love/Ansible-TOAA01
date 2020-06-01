@@ -1,0 +1,4 @@
+ansible_connection=ssh
+ansible_port=22
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file=/root/Ansible-TOAA01/labs/trungnd24/key/staging.pem

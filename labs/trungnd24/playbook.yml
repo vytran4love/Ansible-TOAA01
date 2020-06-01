@@ -1,0 +1,7 @@
+---
+- hosts: prod
+  gather_facts: yes
+  become: yes
+  tasks:
+  - name: "Check connection"
+    ping:

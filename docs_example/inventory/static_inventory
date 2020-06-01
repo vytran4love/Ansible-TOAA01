@@ -7,3 +7,14 @@ ansible_ssh_user=vagrant
 ansible_ssh_private_key_file=/Users/vytran/Project/Ansible-Test/wireguard_ansible_test/.vagrant/machines/ubuntu14/virtualbox/private_
 key
 
+[web]
+10.0.0.71
+10.0.1.71
+10.0.2.70
+10.0.2.71
+
+[api]
+10.0.0.72
+10.0.1.72 
+10.0.2.72 
+10.0.2.73
