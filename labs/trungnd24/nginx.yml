@@ -1,7 +1,0 @@
----
-- hosts: nginx
-  gather_facts: true
-  become: true
-  roles:
-  - role: external.nginx
-
