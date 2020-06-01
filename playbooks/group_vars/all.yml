@@ -1,0 +1,3 @@
+ansible_ssh_user: ansible
+ansible_ssh_private_key_file: /home/tinpc/.ssh/id_rsa
+ansible_ssh_port: 22

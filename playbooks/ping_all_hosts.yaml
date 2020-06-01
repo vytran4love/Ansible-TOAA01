@@ -1,0 +1,8 @@
+---
+- hosts: "{{hostname}}"
+  gather_facts: yes
+  user: ansible
+  become: test
+  tasks:
+    - name: "Ping all hosts"
+      ping:
