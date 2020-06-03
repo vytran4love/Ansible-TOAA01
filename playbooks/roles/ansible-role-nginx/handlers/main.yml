@@ -4,4 +4,13 @@
   systemd:
     name: nginx
     state: started
-    enable: start
+    enable: true
+
+- name: validate nginx
+  command: nginx -t
+  changed_when: false
+
+- name: reload nginx
+  systemd:
+    name: nginx
+    state: reloaded
