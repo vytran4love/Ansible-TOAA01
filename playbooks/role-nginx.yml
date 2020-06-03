@@ -1,5 +1,5 @@
 ---
-- host: nginx
+- hosts: nginx
   become: true
   gather_facts: true
 #  vars:
