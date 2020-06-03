@@ -1,0 +1,21 @@
+---
+- hosts: nginx
+  gather_facts: true
+  become: true
+  pre_tasks:
+  - name: Check connection to remote host 
+    ping:
+  - name: Install pre-requisition
+    raw: sudo apt-get update && apt-get -y install python3
+  tasks:
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: present
+    notify: start and enable nginx
+  handlers:
+  - name: start and enable nginx
+    systemd:
+      name: nginx
+      state: started
+      enabled: yes

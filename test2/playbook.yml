@@ -1,6 +1,0 @@
----
-- hosts: nginx
-  gather_facts: true
-  become: true
-  tasks:
-  - ping:
