@@ -1,0 +1,11 @@
+---
+- host: nginx
+  become: true
+  gather_facts: true
+#  vars:
+#    ansbile_ssh_user: vagrant
+
+  roles:
+    - role: ansible-role-nginx
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
