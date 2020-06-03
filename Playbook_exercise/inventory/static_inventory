@@ -1,0 +1,6 @@
+[nginx]
+192.168.2.1
+[nginx:vars]
+ansible_port=22
+ansible_ssh_user=client
+ansible_sudo_pass=trungduc19922
