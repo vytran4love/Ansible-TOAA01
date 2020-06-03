@@ -1,7 +1,7 @@
 # Lab Inventory
 
 ## Description
-This lab will help you more understand about Inventory. 
+This lab will help you more understand about Inventory.
 
 ## Exercise
 
@@ -20,6 +20,6 @@ This lab will help you more understand about Inventory.
   - Region: ap-southeast-1
   - Status: running
   - Using: private IP address
-  - Tags: 
+  - Tags:
       - Env: prod
       - Name: web / api
