@@ -1,0 +1,4 @@
+- src: git@github.com/ansible-role-php.git
+  scm: git
+  name: admin.php
+  version: "1.1.0"

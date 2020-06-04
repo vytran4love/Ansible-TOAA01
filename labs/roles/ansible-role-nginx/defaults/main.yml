@@ -1,0 +1,21 @@
+---
+# defaults file for ansible-role-nginx
+nginx_user: "www-data"
+nginx_worker_processes: "auto"
+nginx_worker_cpu_affinity: "auto"
+nginx_worker_rlimit_nofile: "100000"
+nginx_worker_connections: "4096"
+
+nginx_keepalive_timeout: "100"
+nginx_client_body_timeout: "120"
+nginx_reset_timedout_connection: "on"
+nginx_types_hash_max_size: "2048"
+nginx_client_max_body_size: "50M"
+
+# Hide nginx version number
+nginx_server_tokens: "off"
+
+# Dropping SSLv3, ref: POODLE
+nginx_ssl_protocols: "TLSv1 TLSv1.1 TLSv1.2"
+nginx_status_enabled: true
+vhost_directory: "./vhosts/"

@@ -1,0 +1,11 @@
+---
+- hosts: nginx
+  gather_facts: true
+  become: true
+
+  roles:
+  - role: ansible-role-nginx
+    vars:
+      ansible_python_interpreter: /usr/bin/python3
+  
+
