@@ -10,7 +10,7 @@ server {
         listen {{ nginx_proxy_listen_port_http }} default_server;
         listen [::]:{{ nginx_proxy_listen_port_http }} default_server;
 
-        server_name {{ nginx_servername_proxy_primary }}:
+        server_name {{ nginx_servername_proxy_primary }};
 
         access_log {{ nginx_proxy_log_dir }} proxy_prod;
 
