@@ -1,0 +1,11 @@
+---
+- hosts: nginx
+  gather_facts: true
+  become: true
+
+  roles:
+  - role: ansible-role-nginx
+    vars:
+      ansible_python_interpreter: /usr/bin/python
+      #nginx_user: www-data   # nếu add giá tri mình đã khai báo trong thư mục default ở ngoài này nó sẽ đè vào giá trị nginx_user trong default/main.yml
+      

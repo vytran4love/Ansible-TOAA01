@@ -1,0 +1,38 @@
+---
+# vars file for ansible-role-nginx
+
+# --- Web ---
+nginx_servername_web01: "trongtest.com www.trongtest.com"
+nginx_web_listen_port_http: "8080"
+nginx_web_listen_port_https: "443"
+nginx_web_log_format: |
+  '$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"'
+
+nginx_web_log_dir: "/var/log/nginx/web_access.log"
+
+# --- Proxy ---
+nginx_proxy_log_format: |
+  '[$time_local] $remote_addr - to: $upstream_addr $request - http_status: $status - http_referer: $http_referer - http_user-agent: $http_user_agent - request_time=$request_time upstream_response_time=$upstream_response_time upstream_connect_time=$upstream_connect_time'
+
+nginx_proxy_log_dir: "/var/log/nginx/proxy_access.log"
+
+nginx_upstreams_web: |
+  server 10.30.7.47:8080 weight=1 max_fails=2 fail_timeout=20s;
+
+nginx_upstreams_keepalive: "128"
+
+nginx_proxy_header: |
+  proxy_http_version 1.1;
+  proxy_redirect off;
+  proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $scheme;
+
+nginx_servername_proxy_primary: "trongtest.com www.trongtest.com"
+nginx_proxy_listen_port_http: "80"
+nginx_proxy_listen_port_https: "443"
+
+
+

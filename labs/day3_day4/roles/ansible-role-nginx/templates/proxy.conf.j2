@@ -1,0 +1,22 @@
+upstream web {
+
+{{ nginx_upstreams_web }}
+
+keepalive {{ nginx_upstreams_keepalive }};
+
+}
+
+server {
+        listen {{ nginx_proxy_listen_port_http }} default_server;
+        listen [::]:{{ nginx_proxy_listen_port_http }} default_server;
+
+        server_name {{ nginx_servername_proxy_primary }}:
+
+        access_log {{ nginx_proxy_log_dir }} proxy_prod;
+
+        location / {
+                proxy_pass http://web;
+                {{ nginx_proxy_header }}
+        }
+}
+

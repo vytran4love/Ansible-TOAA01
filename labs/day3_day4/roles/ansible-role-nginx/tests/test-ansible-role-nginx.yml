@@ -1,0 +1,5 @@
+---
+- hosts: nginx
+  remote_user: root
+  roles:
+    - ansible-role-nginx

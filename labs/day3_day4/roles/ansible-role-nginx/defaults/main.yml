@@ -1,0 +1,66 @@
+---
+# defaults file for ansible-role-nginx
+
+# --------- nginx.conf ------------------
+nginx_user: "nginx"
+nginx_worker_processes: "auto"
+nginx_worker_rlimit_nofile: "100000"
+nginx_worker_connections: "4096"
+
+# --- Allow Origin 
+nginx_add_header: "*"
+
+# --- General Options
+nginx_charset: "utf-8"
+nginx_gnore_invalid_headers: "on"
+nginx_keepalive_requests: "50000"
+nginx_max_ranges: "0"
+nginx_recursive_error_pages: "on"
+nginx_server_tokens: "off"
+nginx_server_name_in_redirect: "off"
+nginx_source_charset: "utf-8"
+
+# --- TCP options
+nginx_tcp_nopush:       "on"
+nginx_tcp_nodelay:      "on"
+nginx_sendfile:         "on"
+nginx_set_real_ip_from: "0.0.0.0/0"
+nginx_real_ip_header: "X-Real-IP"
+
+# ---Size Limits
+nginx_client_body_buffer_size: "10m"
+nginx_client_header_buffer_size:     "256k"
+nginx_large_client_header_buffers:   "4 256k"
+
+# --- Timeouts
+nginx_proxy_connect_timeout: "180"
+nginx_proxy_send_timeout: "180"
+nginx_proxy_read_timeout: "180"
+nginx_send_timeout: "180"
+nginx_client_body_timeout:     "180"
+nginx_client_header_timeout:   "180"
+nginx_keepalive_timeout: "128"
+
+# --- timeout for upload file
+nginx_reset_timedout_connection: "on"
+nginx_connection_pool_size: "256"
+nginx_request_pool_size: "32k"
+nginx_postpone_output: "1460"
+
+# --- Max upload file
+nginx_client_max_body_size: "10M"
+
+# Dropping SSLv3, ref: POODLE
+nginx_ssl_protocols: "TLSv1 TLSv1.1 TLSv1.2"
+nginx_status_enabled: true
+
+# --- include file conf  
+nginx_include: "/etc/nginx/conf.d/*.conf"
+
+# --------------- Vhost ----------------------
+vhost_directory: "./vhosts/"  # thư mục vhost ở ngang cấp roles để copy những file vhost lên /etc/nginx/conf.d/
+
+
+
+
+

@@ -1,0 +1,7 @@
+---
+# vars file for ansible-role-nginx
+
+# --- Web ---
+nginx_servername_web01: "trongtest.com www.trongtest.com"
+nginx_web_listen_port_http: "8080"
+nginx_web_listen_port_https: "443"

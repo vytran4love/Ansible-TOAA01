@@ -1,0 +1,33 @@
+---
+- name: Remove site-availables and sites-enabled
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /etc/nginx/sites-available
+    - /etc/nginx/sites-enabled
+  ignore_errors: yes # nếu xoá rồi và xoá thêm lần nữa dùng ignore_errors để bỏ qua thông báo 
+
+- name: Override nginx.conf
+  template: # load file trong thư mục templates  
+    src: "nginx.conf.j2" 
+    dest: "/etc/nginx/nginx.conf"
+
+- name: Configure Web nginx  
+  template: 
+    src: "web.conf.j2"
+    dest: "/etc/nginx/conf.d/web.conf"
+  notify:
+    - validate nginx
+    - reload nginx
+
+- name: Configure Proxy nginx  
+  template:
+    src: "proxy.conf.j2"
+    dest: "/etc/nginx/conf.d/proxy.conf"
+  notify:
+    - validate nginx
+    - reload nginx
+   
+- name: force all notified handlers to run # bước bắt tất tác vụ trong handler chạy hết
+  meta: flush_handlers
