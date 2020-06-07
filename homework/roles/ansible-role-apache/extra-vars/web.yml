@@ -1,3 +1,4 @@
 host_name: "www.khoana.com.vn"
 host_alias: "khoana.com.vn"
 host_admin: "admin@khoana.com.vn"
+host_config: "khoana.conf"
