@@ -8,4 +8,4 @@
   file:
     state: link
     src: "/etc/apache2/sites-available/{{ host_config }}"
-    dest: "/etc/apache2/site-enabled/{{ host_config }}"
+    dest: "/etc/apache2/sites-enabled/{{ host_config }}"
