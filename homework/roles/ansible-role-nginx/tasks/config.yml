@@ -1,0 +1,18 @@
+---
+- name: Remove sites-avaibles and sites-enabled
+  file:
+          path: "{{ item }}"
+          state: absent
+  with_items:
+          - /etc/nginx/sites-available
+          - /etc/nginx/sites-enabled
+  ignore_errors: yes
+
+- name: Override nginx.conf
+  template:
+          src: "nginx.conf.j2"
+          dest: "/etc/nginx/nginx.conf"
+
+- name: force all notified handlers to run
+  meta: flush_handlers
+

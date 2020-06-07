@@ -1,0 +1,8 @@
+---
+# defaults file for ansible-role-nginx
+nginx_user: "www-data"
+nginx_worker_processes: "auto"
+nginx_worker_cpu_affinity: "auto"
+nginx_worker_rlimit_nofile: "100000"
+nginx_worker_connections: "4096"
+

@@ -1,0 +1,21 @@
+user {{ nginx_user }}
+
+worker_processes {{ nginx_worker_processes }};
+worker_cpu_affinity {{ nginx_worker_cpu_affinity }};
+work_rlimit_nofile {{ nginx_worker_rlimit_nofile }};
+
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+  worker_connections {{ nginx_worker_connections }};
+}
+
+http {
+  sendfile on;
+  tcp_nopush on;
+  tcp_nodelay on;
+}
+
+include /etc/nginx/conf.d/*.conf;
+include /etc/nginx/site-enabled/*;
