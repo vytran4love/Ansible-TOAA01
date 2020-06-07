@@ -1,0 +1,11 @@
+---
+- name: Create VirtualHost
+  template:
+    src: "apache2.conf.j2"
+    dest: "/etc/apache2/sites-available/{{ host_config }}"
+
+- name: Enable VirtualHost config file
+  file:
+    state: link
+    src: "/etc/apache2/sites-available/{{ host_config }}"
+    dest: "/etc/apache2/site-enabled/{{ host_config }}"

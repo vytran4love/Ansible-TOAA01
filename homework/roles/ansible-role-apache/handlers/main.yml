@@ -1,2 +1,17 @@
 ---
 # handlers file for ansible-role-apache
+- name: start apache
+  systemd:
+    name: apache2
+    state: started
+    enabled: true
+
+- name: validate apache2
+  command: service apache2 status
+  changed_when: false
+
+- name: reload apache2
+  systemd:
+    name: apache2
+    state: reloaded
+    

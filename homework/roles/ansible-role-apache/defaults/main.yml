@@ -1,2 +1,9 @@
 ---
 # defaults file for ansible-role-apache
+host_port: "80"
+host_name: "www.example.com.vn"
+host_alias: "example.com.vn"
+host_admin: "Khoana@localhost"
+host_doc_root: "/var/www/html"
+host_error_log: "${APACHE_LOG_DIR}/error.log"
+host_custom_log: "${APACHE_LOG_DIR}/access.log combined"

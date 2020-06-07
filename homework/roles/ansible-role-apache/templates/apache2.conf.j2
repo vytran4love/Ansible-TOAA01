@@ -1,0 +1,9 @@
+<VirtualHost *:{{ host_port }}>
+  ServerName {{ host_name }}
+  ServerAlias {{ host_alias }}
+  ServerAdmin {{ host_admin }}
+  DocumentRoot {{ host_doc_root }}
+
+  ErrorLog {{ host_error_log }}
+  CustomLog {{ host_custom_log }}
+</VirtualHost>

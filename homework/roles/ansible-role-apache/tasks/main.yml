@@ -1,2 +1,9 @@
 ---
 # tasks file for ansible-role-apache
+- include: install_apache.yml
+  tags:
+    - install_apache
+
+- include: config_apache.yml
+  tags:
+    - config_apache
