@@ -1,4 +1,4 @@
-- src: git@github.com/ansible-role-php.git
+- src: git@github.com:geerlingguy/ansible-role-nginx.git
   scm: git
-  name: admin.php
-  version: "1.1.0"
+  name: external.nginx
+  version: "2.7.0"
