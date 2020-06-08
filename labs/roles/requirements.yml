@@ -1,0 +1,4 @@
+- src: git@github.com:geerlingguy/ansible-role-nginx.git
+  scm: git
+  name: external.nginx
+  version: "2.0.0"
