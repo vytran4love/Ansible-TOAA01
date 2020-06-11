@@ -1,0 +1,10 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+  notify: start nginx
+- name: Install php
+  apt:
+    name: php-fpm
+    state: present

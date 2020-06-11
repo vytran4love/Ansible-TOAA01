@@ -1,0 +1,16 @@
+---
+# handlers file for ansible_role_nginx
+- name: start nginx
+  systemd:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: restart nginx
+  systemd:
+    name: nginx
+    state: reloaded
+
+- name: validate nginx
+  command: nginx -t
+  changed_when: false

@@ -1,0 +1,11 @@
+---
+# tasks file for ansible_role_nginx
+- include: ping.yml
+  tags:
+    - ping
+- include: install.yml
+  tags:
+    - install
+- include: config.yml
+  tags:
+    - config
