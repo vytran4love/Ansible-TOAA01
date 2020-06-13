@@ -1,0 +1,17 @@
+---
+- name: Delete nginx site enable and avalable
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /etc/nginx/sites-available
+    - /etc/nginx/sites-enabled
+
+- name: Copy external nginx configuration from vhost
+  copy:
+    src: "{{ vhost_directory }}"
+    dest: "/etc/nginx/config.d/"
+  notify:
+    #systemd restart nginx 
+    - validate nginx
+    - reload nginx

@@ -1,0 +1,10 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+  notify: start nginx
+
+- name: Install php
+  command:
+    cmd: sudo apt-get install -y php7.1
