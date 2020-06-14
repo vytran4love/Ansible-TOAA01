@@ -1,4 +1,34 @@
-- src: git@github.com:geerlingguy/ansible-role-nginx.git
+- src: git@github.com:geerlingguy/ansible-role-repo-epel.git
   scm: git
-  name: external.nginx
-  version: "2.7.0"
+  name: external.epel-repo
+  version: master
+
+- src: git@github.com:geerlingguy/ansible-role-git.git
+  scm: git
+  name: external.git
+  version: master
+
+- src: git@github.com:geerlingguy/ansible-role-ansible.git
+  scm: git
+  name: external.ansible
+  version: master
+
+- src: git@github.com:geerlingguy/ansible-role-docker.git
+  scm: git
+  name: external.docker
+  version: master
+
+- src: git@github.com:geerlingguy/ansible-role-pip.git
+  scm: git
+  name: external.pip
+  version: master
+
+- src: git@github.com:geerlingguy/ansible-role-nodejs.git
+  scm: git
+  name: external.nodejs
+  version: master
+
+- src: git@github.com:geerlingguy/ansible-role-awx.git
+  scm: git
+  name: external.awx
+  version: master
