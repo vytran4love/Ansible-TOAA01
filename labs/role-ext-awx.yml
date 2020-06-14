@@ -3,15 +3,22 @@
   gather_facts: true
   become: true
   vars:
+    awx_repo: https://github.com/ansible/awx.git
+    awx_repo_dir: "~/awx"
+    awx_version: devel
+    awx_keep_updated: true
     nodejs_version: "6.x"
+    pip_package: python3-pip
+    pip_executable: pip3
     pip_install_packages:
-      - name: docker-py
+      - name: docker
+      - name: docker-compose==1.26.0
+      - name: requests==2.14.2
 
   roles:
-    - geerlingguy.repo-epel
-    - geerlingguy.git
-    - geerlingguy.ansible
-    - geerlingguy.docker
-    - geerlingguy.pip
-    - geerlingguy.nodejs
-    - geerlingguy.awx
+    - external.git
+    - external.ansible
+    - external.docker
+    - external.pip
+    - external.nodejs
+    - external.awx

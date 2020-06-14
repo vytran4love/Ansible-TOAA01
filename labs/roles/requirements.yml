@@ -1,7 +1,3 @@
-- src: git@github.com:geerlingguy/ansible-role-repo-epel.git
-  scm: git
-  name: external.epel-repo
-  version: master
 
 - src: git@github.com:geerlingguy/ansible-role-git.git
   scm: git
