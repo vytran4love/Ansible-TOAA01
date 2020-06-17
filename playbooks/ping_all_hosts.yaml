@@ -1,5 +1,5 @@
 ---
-- hosts: "{{hostname}}"
+- hosts: all
   gather_facts: yes
   user: ansible
   become: test

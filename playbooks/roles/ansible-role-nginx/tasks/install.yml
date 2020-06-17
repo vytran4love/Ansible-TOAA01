@@ -1,6 +1,9 @@
 ---
-- name: Install nginx
-  apt:
-    name: nginx
-    state: present
-  notify: start nginx
+- name: Install nginx & php7.1
+  apt: name={{ item }} state=present
+  with_items:
+   - nginx
+   - php
+
+- name: Start nginx
+  service: name=nginx state=started

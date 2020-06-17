@@ -1,0 +1,12 @@
+---
+- hosts: nginx
+  gather_facts: true
+  become: true
+
+  tasks:
+  - name: 'Stop nginx'
+    service:
+      name: nginx
+      state: stopped
+  -name: ensure nginx is not installed
+   apt: name=nginx state=absent

@@ -1,0 +1,42 @@
+---
+- hosts: nginx
+  gather_facts: true
+  become: true
+  tasks:
+    - include_role:
+        name: ansible-role-nginx
+      vars:
+        name: ubuntu1
+        nginx_user: www-data
+        http_port: [8080]
+        https_port: [8443]
+        nginx_internal_ip: 192.168.1.115
+        vhost_domain1: hello.example.com
+        vhost_domain2: info.example.com
+
+    - name: create directory
+      file:
+        path: "{{ item.path }}"
+        state: directory
+        mode: "0775"
+        group: "www-data"
+        owner: "root"
+      with_items:
+        - path: "/var/www/webapp1"
+        - path: "/var/www/webapp2"
+
+    - name: transfer files to vhost hello.example.com
+      copy:
+        src: "{{ playbook_dir }}/roles/ansible-role-nginx/files/webapp1/"
+        dest: /var/www/webapp1/
+        owner: "root"
+        group: "www-data"
+        mode: "0640"
+
+    - name: transfer files to vhost info.example.com
+      copy:
+        src: "{{ playbook_dir }}/roles/ansible-role-nginx/files/webapp2/"
+        dest: /var/www/webapp2/
+        owner: "root"
+        group: "www-data"
+        mode: "0640"

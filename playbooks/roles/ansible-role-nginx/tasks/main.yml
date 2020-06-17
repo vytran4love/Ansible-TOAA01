@@ -1,9 +1,4 @@
 ---
 # tasks file for ansible-role-nginx
-- include: install.yml
-  tags:
-    - install
-# ansible-playbook them opt -t install de chi dinh tag insall
-- include: config.yml
-  task:
-    - config
+- name: install nginx
+  import_tasks: install.yml
