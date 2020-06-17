@@ -16,18 +16,26 @@ pipeline {
     ANSIBLE_HOST_KEY_CHECKING = 'False'
     ANSIBLE = '/usr/bin/ansible'
   }
-
+   parameters {
+    string (name: "command", description: "command execute")
+  }
   stages{
+    stage("List inventory"){
+      steps {
+        sh """
+        ansible-inventory -i labs/hosts01 --graph
+        """
+      }
+    }
     stage("Run ansible command"){
       steps {
         sh """
-          ansible-inventory -i labs/hosts01 --graph
           ${ANSIBLE}  -i labs/hosts01 nginx \
             -e ansible_ssh_user=vagrant \
             -e ansible_ssh_private_key_file=/var/lib/jenkins/vagrant.pem \
             --become  \
             -m shell \
-            -a "pwd"
+            -a "${params.command}"
         """
       }
     }
