@@ -21,10 +21,10 @@ pipeline {
     stage("Run ansible command"){
       steps {
         sh """
-          ansible-inventory -i host01 --graph
-          ${ANSIBLE}  -i host01 nginx
+          ansible-inventory -i labs/host01 --graph
+          ${ANSIBLE}  -i labs/host01 nginx
             -e ansible_ssh_user=vagrant \
-            -e ansible_ssh_private_key_file=~/.ssh/vagrant.pem \
+            -e ansible_ssh_private_key_file=/var/lib/jenkins/vagrant.pem \
             --become  \
             -m shell \
             -a "pwd"
